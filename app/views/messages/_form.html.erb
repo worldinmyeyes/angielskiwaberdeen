@@ -1,4 +1,4 @@
-<%= form_for(@message) do |f| %>
+<%= simple_form_for(@message) do |f| %>
   <% if @message.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
@@ -12,26 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.input :first_name, label:  "Imię:"%>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.input :last_name, label: "Nazwisko:" %>
   </div>
   <div class="field">
-    <%= f.label :telephone %><br>
-    <%= f.text_field :telephone %>
+    <%= f.input :telephone, label: "Nr telefonu:" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.input :email, label: "E-mail:" %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.input :content, as: :text, label: "Treść wiadomości:", :input_html => {:rows => 10} %>
   </div>
+  <div class= "hidden">
+      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+    </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, "Wyślij wiadomość" %>
   </div>
 <% end %>

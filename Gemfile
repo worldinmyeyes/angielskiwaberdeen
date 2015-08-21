@@ -34,6 +34,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'zurb-foundation'
 gem 'foundation-rails'
 
+# forms
+gem 'simple_form'
+gem 'mail_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

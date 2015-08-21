@@ -17,23 +17,14 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
-  # GET /messages/1/edit
-  def edit
-  end
-
-  # POST /messages
-  # POST /messages.json
   def create
     @message = Message.new(message_params)
-
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
+    @message.request = request
+    if @message.deliver
+      flash.now[:notice] = 'Dziękuję za przesłanie wiadomości! Skontakuję się z Tobą wkrótce.'
+    else
+      flash.now[:error] = 'Wysłanie wiadomości nie powiodło się.'
+      render :new
     end
   end
 
@@ -69,6 +60,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:first_name, :last_name, :telephone, :email, :content)
+      params.require(:message).permit(:first_name, :last_name, :telephone, :email, :content, :nickname)
     end
 end

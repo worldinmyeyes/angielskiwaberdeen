@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imię:</strong>
+  <%= @message.first_name %>
+</p>
+
+<p>
+  <strong>Nazwisko:</strong>
+  <%= @message.last_name %>
+</p>
+
+<p>
+  <strong>Nr telefonu:</strong>
+  <%= @message.telephone %>
+</p>
+
+<p>
+  <strong>E-mail:</strong>
+  <%= @message.email %>
+</p>
+
+<p>
+  <strong>Treść wiadomości:</strong>
+  <%= @message.content %>
+</p>
+
+<%= link_to 'Powrót', home_path %>
