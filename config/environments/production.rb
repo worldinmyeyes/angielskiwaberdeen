@@ -69,13 +69,14 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
+  address:              'smtp.sendgrid.net',
   port:                 587,
-  domain:               'gmail.com',
-  user_name:            'wojciechszczerek@gmail.com',
-  password:             'noweHory15',
+  domain:               'heroku.com',
+  user_name:            ENV['app40336263@heroku.com'],
+  password:             ENV['qajtyvz46016'],
   authentication:       'plain',
   enable_starttls_auto: true  }
+
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
