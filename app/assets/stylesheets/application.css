@@ -17,3 +17,7 @@
  */
 
  .hidden { display: none; }
+
+ p, li, h1, h2, h3, h4, img {
+ 	text-align: justify;
+ }

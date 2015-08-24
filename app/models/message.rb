@@ -11,9 +11,9 @@ class Message < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      :subject => "Formularz kontaktowy",
-      :to => "wojciechszczerek@wp.pl",
-      :from => %("#{first_name}" <#{email}>)
+      :subject => "Angielski w Aberdeen - Formularz kontaktowy",
+      :to => "angielskiwaberdeen@gmail.com",
+      :from => %("#{first_name} #{last_name}" <#{email}>)
     }
   end
 end
